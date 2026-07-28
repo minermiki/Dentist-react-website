@@ -1,0 +1,114 @@
+.contact {
+  background-color: var(--color-cream);
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  opacity: 0.3;
+}
+
+.contact__label { color: var(--color-gold); }
+.contact__label::before { background: var(--color-gold); }
+.contact__title { color: var(--color-dark); }
+.contact__desc { color: var(--color-text-muted); }
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact__item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  transition: background var(--transition);
+}
+
+.contact__item:hover {
+  background: rgba(37, 99, 235, 0.04);
+}
+
+.contact__item-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  color: var(--color-gold);
+  font-size: 1.1rem;
+  background: rgba(37, 99, 235, 0.06);
+  transition: all var(--transition);
+}
+
+.contact__item:hover .contact__item-icon {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  border-color: var(--color-gold);
+}
+
+.contact__item-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.contact__item-value {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-dark);
+}
+
+.contact__item-link {
+  transition: color var(--transition-fast);
+}
+
+.contact__item-link:hover {
+  color: var(--color-gold);
+}
+
+.contact__map-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  min-height: 400px;
+  background: linear-gradient(145deg, #f8fafc, #f1f5f9, #e2e8f0);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  color: var(--color-text-muted);
+}
+
+.contact__map-placeholder::before {
+  border-color: rgba(37, 99, 235, 0.1);
+}
+
+@media (max-width: 900px) {
+  .contact__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .contact__map-placeholder {
+    min-height: 280px;
+  }
+}
